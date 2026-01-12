@@ -1,0 +1,13 @@
+import random
+print("...WELCOME__TO__NUMBER__GUESSING__GAME...")
+rand = random.randint(1,10)
+cond = True
+cnt = 1
+while cond:
+    num = int(input("Guess a number: "))
+    if num == rand:
+        print(f"Guessed correctly✅ in {cnt} attempts")
+        cond = False
+    else:
+        print("❌Wrong, Try Again!")
+        cnt += 1
