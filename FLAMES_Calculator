@@ -1,0 +1,19 @@
+print("...F__L__A__M__E__S...C_A_L_C_U_L_A_T_O_R...")
+name1, name2 = list(input("Give name of the first person: ").lower().replace(" ","")), list(input("Give name of the second person: ").lower().replace(" ",""))
+for i in range(len(name1)):
+    if name1[i] in name2:
+        index = name2.index(name1[i])
+        name1[i] = ''
+        name2[index] = ''
+name = name1+name2
+dc = name.count('')
+ndc = len(name) - dc
+if ndc == 0:
+    print("Not Possible to calculate")
+else:
+    flames = ["Friends", "Love", "Affection", "Marriage", "Enemy", "Sister/Sibling"]
+    index = 0
+    while len(flames) > 1:
+        index = (index + ndc -1) % len(flames) 
+        flames.pop(index)
+    print(flames)
