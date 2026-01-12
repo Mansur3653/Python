@@ -1,0 +1,31 @@
+import random
+print("...WELCOME__TO__HANGMAN__GAME...")
+words = ["zero","one","two","three","four","five","six","seven","eight","nine","ten"]
+rw = random.choice(words)
+chances = 6
+print("==> Only 6 wrong guesses!...")
+print("HINT: Numbers from 0 to 10 like zero,one,...")
+gw = list(rw) 
+gwcpy = gw.copy()
+for i in range(len(gw)):
+    gwcpy[i] = "_"
+print(gwcpy)
+while chances > 0:
+    letter = input("Enter a letter to guess:")
+    if letter in gw:
+        for i in range(len(gw)):
+            if letter == gw[i]:
+                gwcpy[i] = gw[i]
+                print(gwcpy)
+                chances += 1
+        if "".join(gwcpy) == rw:
+            break
+        else:
+            chances -= 1
+    else:
+        print(gwcpy)
+        chances -= 1
+if chances == 0:
+    print("You Failed❌ to guess the word in the given chances.")
+else:
+    print("Congratulations! You Won🏆")
