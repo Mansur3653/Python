@@ -1,0 +1,17 @@
+import random
+print("...WELCOME__TO__ROCK, PAPER & SCISSORS__GAME...")
+opt = ["Rock","Paper","Scissors"]
+rand = random.randint(0,2)
+print("Select 0 for Rock.")
+print("Select 1 for Paper.")
+print("Select 2 for Scissors.")
+cond = True
+while cond:
+    select = int(input("Your Selection: "))
+    if select == rand:
+        print("You have Won🏆")
+        cond = False
+    else:
+        print("You have Lost❌")
+        if input("Do you want to Try again (y/n)?:").lower() == "n":
+            cond = False
